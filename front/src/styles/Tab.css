@@ -1,0 +1,123 @@
+:root {
+  /* Colores para el tema light */
+  --bottom-menu-bg-light: #ffffff;
+  --bottom-menu-text-light: #6b7280;
+  --bottom-menu-active-text-light: #3b82f6;
+  --bottom-menu-shadow-light: rgba(0, 0, 0, 0.1);
+
+  /* Colores para el tema dark */
+  --bottom-menu-bg-dark: #2a2a2a;
+  --bottom-menu-text-dark: #9ca3af;
+  --bottom-menu-active-text-dark: #fff;
+  --bottom-menu-shadow-dark: rgba(0, 0, 0, 0.5);
+}
+
+.bottom-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--bottom-menu-bg-light);
+  box-shadow: 0 -2px 10px var(--bottom-menu-shadow-light);
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.bottom-menu-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  color: var(--bottom-menu-text-light);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.bottom-menu-item.active {
+  color: var(--bottom-menu-active-text-light);
+}
+
+.bottom-menu-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.bottom-menu-label {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.bottom-menu-spacer {
+  height: 60px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .bottom-menu {
+    background-color: var(--bottom-menu-bg-dark);
+    box-shadow: 0 -2px 10px var(--bottom-menu-shadow-dark);
+  }
+
+  .bottom-menu-item {
+    color: var(--bottom-menu-text-dark);
+  }
+
+  .bottom-menu-item.active {
+    color: var(--bottom-menu-active-text-dark);
+  }
+}
+
+.tab-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  padding: 1rem;
+}
+
+.cart-badge {
+  position: absolute;
+  top: 2px;
+  right: -4px;
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+  line-height: 1;
+  z-index: 10;
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+.custom-toast {
+  --width: fit-content;
+  --max-width: 240px;
+  top: 10px !important;
+  right: 10px !important;
+  left: auto !important;
+  transform: none !important;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 10px;
+}
