@@ -1,10 +1,10 @@
 import axios from 'axios';
 
 const URLLOCAL = "http://localhost:4000/api";
-const URLVERCEL = "";
+const URLVERCEL = "https://backpruebatecnica.vercel.app/api";
 
 const api = axios.create({
-  baseURL: URLLOCAL,
+  baseURL: URLVERCEL,
   headers: {
     'Content-Type': 'application/json',
   },
